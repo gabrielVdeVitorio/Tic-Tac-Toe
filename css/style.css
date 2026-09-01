@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
 
+:root
+{
+    --board-boxes: 5rem;
+}
+
 *
 {
     padding: 0;
@@ -14,4 +19,168 @@ body
     align-items: center;
     justify-content: center;
     height: 100vh;
+    background-color: #56baed;
+}
+
+.select-box
+{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 2rem 3rem;
+    border-radius: 1rem;
+    gap: 1rem;
+    display: none;
+}
+
+.select-box header
+{
+    border-bottom: 1px solid #ccc;
+}
+
+.options
+{
+    display: flex;
+    justify-content: space-between;
+    gap: 0.4rem;
+}
+
+.options button
+{
+    background-color: #56baed;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    padding: .5rem .4rem;
+    border-radius: 0.3rem;
+    width: 100%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.options button:active
+{
+    background-color: #9cbfd6;
+}
+
+.options button:hover
+{
+    transform: scale(0.96);
+}
+
+/* Play Board Game Section ------------------------------------------------------------------------------------ */
+.play-board
+{
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+    display: none;
+}
+
+.play-board .details
+{
+    background-color: #fff;
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.details .players
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+}
+
+.details span
+{
+    color: #56baed;
+    font-size: 1.2rem;
+    border-radius: 0.3rem;
+    padding: 0.5rem 0.6rem;
+    width: 100%;
+    font-weight: 500;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+
+.players
+{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.players span:first-child
+{
+    color: #fff;
+}
+
+#boxes
+{
+    display: flex;
+    flex-direction: column;
+}
+
+#boxes section
+{
+    display: flex;
+    flex-direction: row;
+}
+
+section .box
+{
+    display: block;
+    height: var(--board-boxes);
+    width: var(--board-boxes);
+    background-color: #fff;
+    margin: 2px;
+    border-radius: 0.5rem;
+    font-size: 2.5rem;
+    text-align: center;
+    line-height: var(--board-boxes);
+}
+
+.slider
+{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 50%;
+    background-color: #56baed;
+    border-radius: 0.3rem;
+    z-index: 2;
+}
+
+/* Result Box Section ------------------------------------------------------------------------------------ */
+.result-box
+{
+    background-color: #fff;
+    padding: 1.3rem;
+    border-radius: 0.3rem;
+}
+
+.result-box .won-text
+{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.result-box .winner
+{
+    font-weight: 600;
+    margin: 0 0.2rem;
+}
+
+.result-box .btn
+{
+    display: flex;
+    margin-top: 1.25rem;
+    justify-content: center;
 }
